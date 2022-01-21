@@ -1,0 +1,148 @@
+:root {
+    --cal-color-bg: #e9e9e9;
+    --cal-color-keys: whitesmoke;
+    --cal-color-equal: #269e93;
+    --cal-color-operation:#c1edea;
+    --font-primary: system-ui;
+    --font-secondary: monospace;
+}
+
+.cal-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cal-container {
+    min-width: 450px;
+    background-color: var(--cal-color-bg);
+    color: #333;
+}
+
+.cal-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    grid-template-areas:
+        "clear clear mod add"
+        "one two three minus"
+        "four five six times"
+        "seven eight nine divide"
+        "zero point equal equal";
+    grid-gap: 5px;
+    font-family: var(--font-primary);
+}
+
+#clear {
+    grid-area: clear;
+    background-color: var(--cal-color-keys);
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: var(--font-secondary);
+}
+
+#mod {
+    grid-area: mod;
+    background-color: var(--cal-color-keys);
+}
+
+#add {
+    grid-area: add;
+    background-color: var(--cal-color-operation);
+}
+
+#subtract {
+    grid-area: minus;
+    background-color: var(--cal-color-operation);
+}
+
+#multiply {
+    grid-area: times;
+    background-color: var(--cal-color-operation);
+}
+
+#divide {
+    grid-area: divide;
+    background-color: var(--cal-color-operation);
+}
+
+#equals {
+    grid-area: equal;
+    background-color: var(--cal-color-equal);
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.point {
+    grid-area: point;
+}
+
+.cal-body>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: var(--cal-color-keys);
+    box-shadow: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+
+.cal-display {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: right;
+    min-height: 130px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1rem;
+    font-family: var(--font-primary);
+}
+
+.cal-button {
+    border: none;
+    background-color: transparent;
+}
